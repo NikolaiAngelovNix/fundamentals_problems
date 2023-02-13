@@ -2,9 +2,7 @@ employee_happiness = [int(x) for x in input().split()]
 happiness_factor = int(input())
 multiplied_happiness = [(el * happiness_factor) for el in employee_happiness]
 
-total_happiness = 0
-for el in multiplied_happiness:
-    total_happiness += el
+total_happiness = sum(multiplied_happiness)
 
 average_happiness = total_happiness / len(multiplied_happiness)
 happy_employees = 0
