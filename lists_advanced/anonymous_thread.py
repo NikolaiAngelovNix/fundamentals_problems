@@ -7,9 +7,11 @@ while command != "3:1":
     if task == "merge":
         starting_index = int(current_command[1])
         end_index = int(current_command[2])
+        merged_string = ""
+        if len(given_strings) == 1 or starting_index > len(given_strings) and end_index > len(given_strings):
+            continue
         if starting_index < 0:
             starting_index = 0
-        merged_string = ""
         if end_index > len(given_strings) - 1:
             end_index = len(given_strings) - 1
         for el in range(starting_index, end_index + 1):
@@ -33,4 +35,4 @@ while command != "3:1":
     command = input()
 
 
-print(given_strings)
+print(" ".join(given_strings))
